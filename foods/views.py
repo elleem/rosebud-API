@@ -6,6 +6,6 @@ class FoodList(generics.ListCreateAPIView):
     queryset = Food.objects.all()
     serializer_class = FoodSerializer
 
-class FoodDetail(generics.RetrieveAPIView):
+class FoodDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Food.objects.all()
     serializer_class = FoodSerializer
