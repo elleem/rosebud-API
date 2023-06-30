@@ -10,12 +10,12 @@ Version 1.0
 
 Using Django REST framework to create an API, then containerize it with Docker. 
 
-#### Feature
+#### Features
 
-- 
-
-
-
+- [x] Rebuild a custom version of Things API demo
+- [x] Replace with your own application and model
+- [x] Your model should have as many fields as the demo
+- [x] Your model should have one foreign key
 
 
 ### Setup
@@ -28,9 +28,7 @@ initiate a virtual environment
 
 ### how to initialize/run this app
 
-`python manage.py runserver`
-
-run via the local server
+`docker compose up`
 
 ### tests
 
