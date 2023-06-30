@@ -6,6 +6,8 @@ Version 1.0
 
 ### Links and Resources
 
+Thanks to Parks and Rec for all the breakfast food quotes. :)
+
 ### Overview
 
 Using Django REST framework to create an API, then containerize it with Docker. 
