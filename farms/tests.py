@@ -115,9 +115,9 @@ class FoodTests(APITestCase):
 #         url = reverse("food_list")
 #         response = self.client.get(url)
 #         self.assertEqual(response.status_code, status.HTTP_200_OK)
-#         foods = response.data
-#         self.assertEqual(len(foods), 1)
-#         self.assertEqual(foods[0]["name"], "rake")
+#         farms = response.data
+#         self.assertEqual(len(farms), 1)
+#         self.assertEqual(farms[0]["name"], "rake")
 #
 #     def test_get_food_by_id(self):
 #         url = reverse("food_detail", args=(1,))
@@ -131,8 +131,8 @@ class FoodTests(APITestCase):
 #         data = {"reviewer": 1, "name": "spoon", "description": "good for cereal and soup"}
 #         response = self.client.post(url, data)
 #         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-#         foods = Food.objects.all()
-#         self.assertEqual(len(foods), 2)
+#         farms = Food.objects.all()
+#         self.assertEqual(len(farms), 2)
 #         self.assertEqual(Food.objects.get(id=2).name, "spoon")
 #
 #     def test_update_food(self):
@@ -153,5 +153,5 @@ class FoodTests(APITestCase):
 #         url = reverse("food_detail", args=(1,))
 #         response = self.client.delete(url)
 #         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-#         foods = Food.objects.all()
-#         self.assertEqual(len(foods), 0)
+#         farms = Food.objects.all()
+#         self.assertEqual(len(farms), 0)
