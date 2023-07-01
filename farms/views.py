@@ -1,11 +1,11 @@
 from rest_framework import generics
-from .serializers import FoodSerializer
-from .models import Food
+from .serializers import FarmSerializer
+from .models import Farm
 
 class FoodList(generics.ListCreateAPIView):
-    queryset = Food.objects.all()
-    serializer_class = FoodSerializer
+    queryset = Farm.objects.all()
+    serializer_class = FarmSerializer
 
 class FoodDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Food.objects.all()
-    serializer_class = FoodSerializer
+    queryset = Farm.objects.all()
+    serializer_class = FarmSerializer

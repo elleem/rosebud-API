@@ -6,18 +6,18 @@ Version 1.0
 
 ### Links and Resources
 
-Thanks to Parks and Rec for all the breakfast food quotes. :)
+
 
 ### Overview
 
-Using Django REST framework to create an API, then containerize it with Docker. 
+Updating Django REST  API, by adding Permissions and Postgresql Database. 
 
 #### Features
 
-- [x] Rebuild a custom version of Things API demo
-- [x] Replace with your own application and model
-- [x] Your model should have as many fields as the demo
-- [x] Your model should have one foreign key
+- [x] Make your site a DRF powered API
+- [] Adjust so that authenticated users only have access to the API
+- [] Add a customer permission so that only authenticated users can update or delete
+- [] Add ability to switch users directly from browsable API
 
 
 ### Setup
@@ -33,4 +33,6 @@ initiate a virtual environment
 `docker compose up`
 
 ### tests
+
+
 
