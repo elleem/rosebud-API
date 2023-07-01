@@ -18,6 +18,7 @@ class FarmTests(APITestCase):
             name="rake",
             reviewer=testuser1,
             description="Better for collecting leaves than a shovel.",
+            average_rating="4"
         )
         test_farm.save()
 
@@ -26,10 +27,13 @@ class FarmTests(APITestCase):
         actual_reviewer = str(farm.reviewer)
         actual_name = str(farm.name)
         actual_description = str(farm.description)
+        actual_average_rating = str(farm.average_rating)
         self.assertEqual(actual_reviewer, "testuser1")
         self.assertEqual(actual_name, "rake")
         self.assertEqual(
-            actual_description, "Better for collecting leaves than a shovel."
+            actual_description, "Better for collecting leaves than a shovel.")
+        self.assertEqual(
+            actual_average_rating, "4"
         )
 
     def test_get_farm_list(self):
@@ -49,7 +53,7 @@ class FarmTests(APITestCase):
 
     def test_create_farm(self):
         url = reverse("farm_list")
-        data = {"reviewer": 1, "name": "spoon", "description": "good for cereal and soup"}
+        data = {"reviewer": 1, "name": "spoon", "description": "good for cereal and soup", "average_rating": "4",}
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         farms = Farm.objects.all()
@@ -62,6 +66,7 @@ class FarmTests(APITestCase):
             "reviewer": 1,
             "name": "rake",
             "description": "pole with a crossbar toothed like a comb.",
+            "average_rating": "4",
         }
         response = self.client.put(url, data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -69,6 +74,7 @@ class FarmTests(APITestCase):
         self.assertEqual(farm.name, data["name"])
         self.assertEqual(farm.reviewer.id, data["reviewer"])
         self.assertEqual(farm.description, data["description"])
+        self.assertEqual(farm.average_rating, data["average_rating"])
 
     def test_delete_farm(self):
         url = reverse("farm_detail", args=(1,))
