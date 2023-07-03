@@ -4,6 +4,7 @@ from .models import Farm
 from .permissions import IsOwnerOrReadOnly
 
 class FarmList(generics.ListCreateAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
     queryset = Farm.objects.all()
     serializer_class = FarmSerializer
 

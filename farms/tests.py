@@ -23,12 +23,6 @@ class FarmTests(APITestCase):
         test_farm.save()
 
 
-    def setUp(self):
-        self.user = get_user_model().objects.create_user(
-            username="testuser2", password="pass"
-        )
-        self.client.force_authenticate(user=self.user)
-
     def test_farms_model(self):
         farm = Farm.objects.get(id=1)
         actual_reviewer = str(farm.reviewer)
@@ -60,7 +54,7 @@ class FarmTests(APITestCase):
 
     def test_create_farm(self):
         url = reverse("farm_list")
-        data = {"reviewer": self.user.id, "name": "spoon", "description": "good for cereal and soup", "average_rating": "4",}
+        data = {"reviewer": 1, "name": "spoon", "description": "good for cereal and soup", "average_rating": "4",}
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         farms = Farm.objects.all()
@@ -70,7 +64,7 @@ class FarmTests(APITestCase):
     def test_update_farm(self):
         url = reverse("farm_detail", args=(1,))
         data = {
-            "reviewer": self.user.id,
+            "reviewer": 1,
             "name": "rake",
             "description": "pole with a crossbar toothed like a comb.",
             "average_rating": "4.00",
