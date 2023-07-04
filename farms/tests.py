@@ -70,6 +70,7 @@ class FarmTests(APITestCase):
             "average_rating": "4.00",
         }
         response = self.client.put(url, data)
+        print(response.content)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         farm = Farm.objects.get(id=1)
         self.assertEqual(farm.name, data["name"])
