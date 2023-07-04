@@ -1,11 +1,15 @@
 from rest_framework import generics
-from .serializers import FoodSerializer
-from .models import Food
+from .serializers import FarmSerializer
+from .models import Farm
+from .permissions import IsOwnerOrReadOnly
 
-class FoodList(generics.ListCreateAPIView):
-    queryset = Food.objects.all()
-    serializer_class = FoodSerializer
+class FarmList(generics.ListCreateAPIView):
+    permission_classes = (IsOwnerOrReadOnly,)
+    queryset = Farm.objects.all()
+    serializer_class = FarmSerializer
 
-class FoodDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Food.objects.all()
-    serializer_class = FoodSerializer
+class FarmDetail(generics.RetrieveUpdateDestroyAPIView):
+    #authorization
+    permission_classes = (IsOwnerOrReadOnly,)
+    queryset = Farm.objects.all()
+    serializer_class = FarmSerializer
