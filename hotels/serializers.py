@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Farm
+from .models import Hotel
 
-class FarmSerializer(serializers.ModelSerializer):
+class HotelSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model = Farm
+        model = Hotel
