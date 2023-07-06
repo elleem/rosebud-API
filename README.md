@@ -14,11 +14,11 @@ Updating Django REST API, by adding Authentication and switching to a production
 
 #### Features
 
-- [] Add JWT Authentication to your API. 
-- [] Keep any pre-existing authentication so DRF browsable API is still usable
-- [] Switch to Gunicorn
-- [] Use Whitenoise to handle static files
-- [] Test via Thunderclient
+- [x] Add JWT Authentication to your API. 
+- [x] Keep any pre-existing authentication so DRF browsable API is still usable
+- [x] Switch to Gunicorn
+- [x] Use Whitenoise to handle static files
+- [x] Test via curl
 
 
 ### Setup
