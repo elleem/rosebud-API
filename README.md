@@ -1,4 +1,4 @@
-## Project: Django REST Framework and Docker
+## Project: Django REST API with Authentication and Production Server
 
 Author: Lauren Main
 
@@ -6,18 +6,18 @@ Version 1.0
 
 ### Links and Resources
 
-
+Thanks to Schitt's Creek for all the fun quotes.
 
 ### Overview
 
-Updating Django REST  API, by adding Permissions and Postgresql Database. 
+Updating Django REST API, by adding Authentication and switching to a production server. 
 
 #### Features
 
-- [x] Make your site a DRF powered API
-- [x] Adjust so that authenticated users only have access to the API
-- [x] Add a customer permission so that only authenticated users can update or delete
-- [x] Add ability to switch users directly from browsable API
+- [] Add JWT Authentication to your API. 
+- [] Keep any pre-existing authentication so DRG browsable API is still usable
+- [] Switch to Gunicorn
+- [] Use Whitenoise to handle static files
 
 
 ### Setup
