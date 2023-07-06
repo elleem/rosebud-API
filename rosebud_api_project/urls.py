@@ -1,5 +1,5 @@
 """
-URL configuration for beet_farm_api_project project.
+URL configuration for rosebud_api_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/farms/', include('farms.urls')),
+    path('api/v1/hotels/', include('hotels.urls')),
     path('api-auth/', include('rest_framework.urls')),
 ]
