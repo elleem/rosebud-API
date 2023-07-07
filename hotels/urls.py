@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import FarmList, FarmDetail
+from .views import HotelList, HotelDetail
 
 urlpatterns = [
-    path('', FarmList.as_view(), name = 'farm_list'),
-    path('<int:pk>/', FarmDetail.as_view(), name = 'farm_detail'),
+    path('', HotelList.as_view(), name = 'hotel_list'),
+    path('<int:pk>/', HotelDetail.as_view(), name = 'hotel_detail'),
 ]
 
